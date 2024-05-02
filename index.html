@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>RoRR Build Planner</title>
+    <link
+      rel="icon"
+      href=
+      "https://raw.githubusercontent.com/Wwilli04/RorrBuild/main/Thehitlist.png"
+      type="image/x-icon"
+    />
+  </head>
+  
+  <body>
+    <div class="header">
+      <h1>Risk of Rain Returns Build Planner</h1>
+      <p id="author">By Multiphonix <i class="fa fa-question-circle-o" id="info-button"></i></p>
+    </div>
+    <div id="info-pane">
+      <p>
+        This is a build planner app for Risk of Rain Returns. Theory-craft your build here first, and never forget how many stacks of lens maker’s glasses you wanted or what your first red item should be.
+      </p>
+      <p>
+        Click on an item to add it to the current build. Click on an item in the build boxes at the bottom of the screen to remove it. 
+      The filters pane allows you to search by item name or category. You can save the current build to your browser’s local storage and retrieve it again whenever you want, 
+      even after reloading the page. (This uses your browser’s local storage, so your saved builds will be wiped if you clear your browser cache). 
+      You can also download a JSON file of all your locally-saved builds to transfer them to another device, or share them with a friend. Be advised that loading a file will overwrite your locally saved builds.
+      </p>
+      <p>
+        All item images are from <a href="https://store.steampowered.com/app/1337520/Risk_of_Rain_Returns/" target="_blank" style="color: #98F5F9">Risk of Rain Returns</a> and are the property of Hopoo Games. 
+      Tooltips were taken from the <a href="https://riskofrainreturns.wiki.gg/wiki/Risk_of_Rain_Returns_Wiki" target="_blank" style="color: #98F5F9">official wiki</a>. 
+      For comments, suggestions, or bug reports, please <a href="https://github.com/Wwilli04/RoRR-Build-Planner/issues" target="_blank" style="color: #98F5F9">open an issue on GitHub</a>
+      </p>
+      <i class="fa fa-times-circle" id="close-info-button" style="font-size: 1.5rem"></i>
+    </div>
+    <div class="menu">
+      <div class="options">
+        <p>Manage Build: </p>
+        <button id="clear-button">Clear</button>
+        <input type="text" placeholder="Untitled Build" id="name-input"/>
+        <button id="save-button">Save</button>
+        <button id="load-button">Load</button>
+        <select name="Load Build" id="build-dropdown"></select>
+        <button id="delete-button">Delete Build</button>
+        <button id="download-button">Download Builds</button>
+        <button id="upload-button">Upload from File</button>
+        <form id="file-input-form">
+          <input id="file-input" type="file" name="file" />
+        </form>
+        <div id="more-options-pane">
+        </div>
+      </div>
+      <div class="filters">
+        <p>Filter/Search:</p>
+        <input type="text" placeholder="Item Name" id="search-input"/>
+        <div class="checkbox-and-label">
+          <label for="damage-checkbox">Damage:</label>
+          <input type="checkbox" id="damage-checkbox"/>
+        </div>
+        <div class="checkbox-and-label">
+          <label for="healing-checkbox">Healing:</label>
+          <input type="checkbox" id="healing-checkbox"/>
+        </div>
+        <div class="checkbox-and-label">
+          <label for="utility-checkbox">Utility:</label>
+          <input type="checkbox" id="utility-checkbox"/>
+        </div>
+        <button id="clear-filters">Clear Filters</button>
+      </div>
+    </div>
+    <main>
+      <div id="item-boxes">
+        <div id="common-items" class="item-region common"></div>
+        <div id="uncommon-items" class="item-region uncommon"></div>
+        <div id="rare-items" class="item-region rare"></div>
+        <div id="boss-items" class="item-region boss"></div>
+        <div id="equipment-items" class="item-region equipment"></div>
+      </div>
+      <div id="build-boxes">
+        <div id="build-common" class="build-region common"></div>
+        <div id="build-uncommon" class="build-region uncommon"></div>
+        <div id="build-rare" class="build-region rare"></div>
+        <div id="build-boss" class="build-region boss"></div>
+        <div id="build-equipment" class="build-region equipment"></div>
+      </div>
+      <div id="stats-div"></div>
+    </main>
+
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+    <!-- <script type="text/javascript" src="//counter.websiteout.com/js/35/8/0/0"></script> (un-comment before deploying!!!) -->
+  </body>
+</html>

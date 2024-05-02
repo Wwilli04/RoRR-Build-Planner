@@ -421,7 +421,7 @@ const calculateStats = () => { // calculate crit rate and dodge chance
   // -- Print to screen --
   let statsText = ""
   if (stats.critRate > 0.01) {statsText += stats.critRate <= 1 ? `Crit Rate: ${Math.round(stats.critRate * 100)}%` : "Crit Rate: >100%"}
-  if (stats.critRate > 0.01 && stats.dodgeChance > 0) {statsText += ` | `}
+  if (stats.critRate > 0.01 && stats.dodgeChance > 0) {statsText += `  -  `}
   if (stats.dodgeChance > 0) {statsText += `Dodge Chance: ${Math.round(stats.dodgeChance * 100)}%`}
   document.getElementById('stats-div').innerText = statsText
 }

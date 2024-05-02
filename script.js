@@ -257,7 +257,7 @@ document.getElementById("clear-filters").addEventListener("click", () => {
 
 
 const parseFullUrl = (url) => {
-  return `https://raw.githubusercontent.com/Wwilli04/RorrBuild/main/${url}`
+  return `https://raw.githubusercontent.com/Wwilli04/RoRR-Build-Planner/main/images/${url}`
 }
 
 const getWikiUrl = (name) => {
